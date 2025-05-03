@@ -28,6 +28,39 @@
                     </div>
                 </div>
             </div>
+            <div class="col-auto">
+                <div class="row g-1">
+                    <!-- Logged in user action buttons -->
+                    <?php if ($_SESSION['user_is_authenticared']) { ?>
+                        <div class="col-auto">
+                            <a href="https://bsky.app/profile/aorikasumi.bsky.social" class="btn btn-primary">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span>Profile</span>
+                            </a>
+                        </div>
+                            <div class="col-auto">
+                                <a href="https://bsky.app/profile/aorikasumi.bsky.social" class="btn btn-primary">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="https://bsky.app/profile/aorikasumi.bsky.social" class="btn btn-primary">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                    <?php } else { ?>
+                        <!-- Anon user action buttons -->
+                        <div class="col-auto">
+                            <a href="<?= $_SERVER['URL_PUBLIC'] . 'login.php' ?>" class="btn btn-primary">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span>Login</span>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
