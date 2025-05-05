@@ -1,12 +1,16 @@
 <?php
-    // include("database.php");
-    // include("index_php.php");
+    include_once 'autoload.php';
+    include_once 'config/globals.php';
+
+    // $user = new User();
+    // $user->getUsername();
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-core="modern" data-bs-theme="dark">
-
-<?php include 'assets/components/head.component.php'; ?>
-
+<head>
+    <?php include 'assets/components/headContent.component.php'; ?>
+    <title>Musicah | Home</title>
+</head>
 <body>
     <?php include 'assets/components/navbar.component.php'; ?>
 
