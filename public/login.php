@@ -1,8 +1,10 @@
 <?php
     include_once '../config/globals.php';
+    include_once '../autoload.php';
 
-    if ($_SERVER['REQUEST_METHOD' == "POST"]){
-
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        $userController = new UserController();
+        $userController->validateUsername($_POST['username']);
     }
 ?>
 <!DOCTYPE html>
@@ -23,13 +25,13 @@
                         <label for="username" class="form-label">
                             Username
                         </label>
-                        <input type="text" class="form-control" placeholder="Username" id="username" >
+                        <input type="text" class="form-control" placeholder="Username" id="username" name="username">
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">
+                        <label for="password" class="form-label">
                             Password
                         </label>
-                        <input type="text" class="form-control" placeholder="Username" id="username" >
+                        <input type="text" class="form-control" placeholder="Password" id="password" name="password">
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary w-100" name="login">
