@@ -5,7 +5,6 @@ spl_autoload_register(function ($className) {
         __DIR__ . '/app/controllers/',
         __DIR__ . '/app/models/',
         __DIR__ . '/app/views/',
-        __DIR__ . '/assets/modules/',
     ];
 
     foreach ($directories as $directory) {

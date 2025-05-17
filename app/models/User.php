@@ -14,11 +14,24 @@ class User extends Database {
         return $username;
     }
 
-    protected function getPassword(int $id): string {
+    protected function getPasswordByID(int $id): string {
         $query = "SELECT password FROM users WHERE id = ?";
         $stmt = $this->connect()->prepare($query);
         $stmt->execute([$id]);
-        $password = $stmt->fetch();
+        $password = $stmt->fetch()->password;
+
+        if (!$password) {
+            throw new Exception("User not found.");
+        }
+
+        return $password;
+    }
+
+    protected function getPasswordByUsername(string $username): string {
+        $query = "SELECT password FROM users WHERE username = ?";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute([$username]);
+        $password = $stmt->fetch()->password;
 
         if (!$password) {
             throw new Exception("User not found.");
@@ -58,13 +71,19 @@ class User extends Database {
         $stmt = $this->connect()->prepare($query);
         $stmt->execute([$id]);
 
-        return $stmt->fetch()->id ? true : false;
+        return isset($stmt->fetch()->id);
     }
 
-    protected function usernameExists(string $username) {
+    protected function usernameExists(string $username): bool {
         $query = "SELECT username FROM users WHERE username = ?";
         $stmt = $this->connect()->prepare($query);
         $stmt->execute([$username]);
-        return $stmt->fetch()->username ? true : false;
+        return isset($stmt->fetch()->username);
+    }
+
+    protected function createNewUser(string $username, string $password): bool {
+        $query = "INSERT INTO users(username, password) VALUES(?, ?)";
+        $stmt = $this->connect()->prepare($query);
+        return $stmt->execute([$username, $password]);
     }
 }
