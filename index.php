@@ -1,18 +1,15 @@
-<?php
-    include_once 'autoload.php';
-    include_once 'config/globals.php';
 
-    // $user = new User();
-    // $user->getUsername();
+<?php
+    include_once 'config/globals.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-core="modern" data-bs-theme="dark">
 <head>
-    <?php include 'assets/components/headContent.component.php'; ?>
+    <?php include_once 'assets/components/head.php'; ?>
     <title>Musicah | Home</title>
 </head>
 <body>
-    <?php include 'assets/components/navbar.component.php'; ?>
+    <?php include_once 'assets/components/navbar.php'; ?>
 
     <div class="container">
         <div class="row py-2 my-2 justify-content-end">
