@@ -128,10 +128,10 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-success w-100">
+                        <a href="<?= $urls->public->signin ?>" class="btn btn-success w-100">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             Signin
-                        </button>
+                        </a>
                     </div>
                 </form>
             </div>
