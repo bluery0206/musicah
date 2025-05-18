@@ -9,30 +9,33 @@ $baseUrl = $serverProtocol . "://" . $_SERVER['HTTP_HOST'] . "/";
 // Example:
 //      $dir = "parentDirName/projectDirName/";
 $dir = "php-projects/musicah/";
+$rootDir = "/";
 
 if (isset($dir)) {
-    $baseUrl = "{$baseUrl}{$dir}";
+    $rootDir .= $dir;
+    $baseUrl .= $dir;
 }
+
+
+// You common media files
+$asset = "{$rootDir}assets/";
+
 
 $publicDir = "public/";
 $publicUrl = "{$baseUrl}{$publicDir}";
 
-
 // URLs
-
-$publicUrls = (object)[
+// In attempt to follow how Django urls work
+// Or just at least make it easier to manage
+$urls = (object)[
+    "index" => $baseUrl,
     "signin" => "{$publicUrl}signin.php",
     "signup" => "{$publicUrl}signup.php",
     "signout" => "{$publicUrl}signout.php",
 ];
 
-// In attempt to follow how Django urls work
-$urls = (object)[
-    "index" => $baseUrl,
-    "public" => $publicUrls,
-];
 
 // Forces user to login before seeing the website
-if (!isset($_SESSION['user']) && !str_contains($_SERVER['PHP_SELF'], "signin")) {
-    header("Location:{$urls->public->signin}");
-}
+// if (!isset($_SESSION['user']) && (!str_contains($_SERVER['PHP_SELF'], "signin") || !str_contains($_SERVER['PHP_SELF'], "signup"))) {
+//     header("Location:{$urls->public->signin}");
+// }

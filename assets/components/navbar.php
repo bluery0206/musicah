@@ -53,7 +53,7 @@
                     <?php } else { ?>
                         <!-- Anon user action buttons -->
                         <div class="col-auto">
-                            <a href="<?= $urls->public->signin ?>" class="btn btn-primary">
+                            <a href="<?= $urls->signin ?>" class="btn btn-primary">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 <span>Login</span>
                             </a>

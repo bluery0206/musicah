@@ -1,7 +1,7 @@
 <?php
-    include_once '../config/globals.php';
-    include_once '../autoload.php';
-    include_once '../assets/modules/exceptions.php';
+    include '../config/globals.php';
+    include '../autoload.php';
+    include '../app/modules/exceptions.php';
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -42,7 +42,7 @@
         <div class="row h-100 p-lg-4 p-0 flex-md-row-reverse row-cols-1 row-cols-md-2">
             <div class="col-md-8 h-100">
                 <div class="row">
-                    <img class="object-fit-cover specific-h-100 specific-h-md-400 p-0" src="../assets/images/pexels-expect-best-79873-351265.jpg">
+                    <img class="object-fit-cover specific-h-100 specific-h-md-400 p-0" src="<?= "{$asset}images/pexels-expect-best-79873-351265.jpg" ?>">
                 </div>
             </div>
             <div class="col-md-4">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <a href="<?= $urls->public->signup ?>" class="btn btn-success w-100">
+                        <a href="<?= $urls->signup ?>" class="btn btn-success w-100">
                             <i class="fa-solid fa-user-plus"></i>
                             Create an account
                         </a>
