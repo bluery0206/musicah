@@ -12,5 +12,5 @@
 <script src="https://kit.fontawesome.com/1c724ccd5b.js" crossorigin="anonymous"></script>
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="assets/css/main.css">
 

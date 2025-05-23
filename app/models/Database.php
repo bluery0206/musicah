@@ -5,7 +5,7 @@ class Database {
         $hname  = "localhost";
         $uname  = "root";
         $pwd    = "";
-        $dbname = "test-db";
+        $dbname = "musicah";
         
         $dsn = "mysql:host=$hname;dbname=$dbname";
         

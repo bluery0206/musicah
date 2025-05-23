@@ -1,6 +1,6 @@
 <?php
 
-include_once '../assets/modules/exceptions.php';
+include_once 'app/modules/exceptions.php';
 
 
 
@@ -63,7 +63,7 @@ class UserController extends User {
         if (!password_verify($password, $this->getPasswordByUsername($username))) {
             throw new Exception("Password does not match.");
         }
-
+        
         $_SESSION['user'] = $this->getUserByUsername($username);
     }
 
