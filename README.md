@@ -1,8 +1,6 @@
 # Musicah
 
-A PHP-based web application. It has the basic CRUD operations for music and User and Anon based views.
-
-A PHP-based web application for managing room reservations with role-based access control. Originally developed as a school project and revived to practice PHP concepts before learning Laravel.
+A PHP-based web application. It has the basic CRUD operations for music and User and Anon based views. Originally developed as a school project and revived to practice PHP concepts before learning Laravel.
 
 This was probably the very first commission I did (neither paid or not) while still getting started with PHP for our Software Engineering I course if I remember correctly.
 
